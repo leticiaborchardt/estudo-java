@@ -24,9 +24,8 @@ public class ServicoBuscaCEP {
             String jsonEmString = Util.converteJsonEmString(resposta);
 
             Gson gson = new Gson();
-            Endereco endereco = gson.fromJson(jsonEmString, Endereco.class);
 
-            return endereco;
+            return gson.fromJson(jsonEmString, Endereco.class);
         } catch (Exception e) {
             throw new Exception("ERRO: " + e);
         }
